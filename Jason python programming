@@ -29,7 +29,67 @@
     }
 ]
 
+import json
 
+# Read JSON file
+with open("employees.json", "r") as file:
+    employees = json.load(file)
+
+# Display all employees
+print("\n--- Employee Records ---")
+for emp in employees:
+    print(emp)
+
+# Search employee by name
+search_name = input("\nEnter employee name to search: ")
+
+found = False
+
+for emp in employees:
+    if emp.get("name", "").lower() == search_name.lower():
+        print("Employee Found:", emp)
+        found = True
+
+if not found:
+    print("Employee not found!")
+
+# Filter employees by department
+department = input("\nEnter department to filter: ")
+
+print("\n--- Filtered Employees ---")
+
+filtered = [
+    emp for emp in employees
+    if emp.get("department", "").lower() == department.lower()
+]
+
+for emp in filtered:
+    print(emp)
+
+# Summary operations
+total_employees = len(employees)
+
+total_salary = sum(emp.get("salary", 0) for emp in employees)
+
+average_salary = (
+    total_salary / total_employees if total_employees else 0
+)
+
+print("\n--- Employee Summary ---")
+print("Total Employees:", total_employees)
+print("Total Salary:", total_salary)
+print("Average Salary:", average_salary)
+
+# Save processed data
+with open("summary.json", "w") as file:
+    json.dump({
+        "total_employees": total_employees,
+        "total_salary": total_salary,
+        "average_salary": average_salary,
+        "filtered_employees": filtered
+    }, file, indent=4)
+
+print("\nResults saved successfully in summary.json")
 
 
 
