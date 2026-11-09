@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Nagur Basha",
+        "age": 21,
+        "department": "ECE",
+        "salary": 25000
+    },
+    {
+        "id": 2,
+        "name": "Rahul",
+        "age": 23,
+        "department": "IT",
+        "salary": 30000
+    },
+    {
+        "id": 3,
+        "name": "Prasad",
+        "age": 22,
+        "department": "HR",
+        "salary": 28000
+    },
+    {
+        "id": 4,
+        "name": "Kiran",
+        "age": 24,
+        "department": "ECE",
+        "salary": 35000
+    }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
